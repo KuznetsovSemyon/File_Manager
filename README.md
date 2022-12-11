@@ -1,6 +1,9 @@
 ## Start
-pl_931901_kuznetsov_lab2/client/ npm start
-pl_931901_kuznetsov_lab2/server/ npm start
+File_Manager/client/ npm install \
+File_Manager/client/ npm start 
+
+File_Manager/server/ npm install \
+File_Manager/server/ npm start
 
 ## Note
 ### if the path is not specified, then the root folder of the local file system will be used
