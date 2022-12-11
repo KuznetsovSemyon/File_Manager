@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F5F5F5;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+.App {
+    width: 800px;
+}
+
+.RowEntity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.Item {
+    border-top: 1px solid gray;
+}
+
+.Item:hover {
+    background-color: #E0E0E0;
+}
+
+.ItemInfo, .ToolBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.FileName {
+    display: flex;
+    margin: 10px;
+    font-size: x-large;
+}
+
+.FileName strong {
+    padding-right: 30px;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    transition: box-shadow .15s,transform .15s;
+}
+
+.DeleteButton {
+    background-image: radial-gradient(100% 100% at 100% 0, #FF3800 0, #CC0000 100%);
+}
+
+.DeleteButton:hover {
+    box-shadow: rgba(102, 0, 0, .4) 0 4px 8px, rgba(102, 0, 0, .3) 0 7px 13px -3px, #a30000 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.DeleteButton:active {
+    box-shadow: #a30000 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.DownloadButton {
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+}
+
+.DownloadButton:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.DownloadButton:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.BackButton {
+    background-image: radial-gradient(100% 100% at 100% 0, #4CBB17 0, #008200 100%);
+}
+
+.BackButton:hover {
+    box-shadow: rgba(0, 39, 0, .4) 0 4px 8px, rgba(0, 39, 0, .3) 0 7px 13px -3px, #006800 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.BackButton:active {
+    box-shadow: #006800 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.UploadButton {
+    background-image: radial-gradient(100% 100% at 100% 0, #FFD700 0, #E49B0F 100%);
+}
+
+.UploadButton:hover {
+    box-shadow: rgba(91, 62, 6, .4) 0 4px 8px, rgba(91, 62, 6, .3) 0 7px 13px -3px, #b67c0c 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.UploadButton:active {
+    box-shadow: #b67c0c 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.CreateFolderButton {
+    background-image: radial-gradient(100% 100% at 100% 0, #c993ff 0, #7200e5 100%);
+}
+
+.CreateFolderButton:hover {
+    box-shadow: rgba(50, 0, 102, .4) 0 4px 8px, rgba(50, 0, 102, .3) 0 7px 13px -3px, #3f007f 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.CreateFolderButton:active {
+    box-shadow: #3f007f 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.OkButton {
+    background-image: radial-gradient(100% 100% at 100% 0, #006800 0, #004800 100%);
+}
+
+.OkButton:hover {
+    box-shadow: rgba(0, 39, 0, .4) 0 4px 8px, rgba(0, 39, 0, .3) 0 7px 13px -3px, #003400 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.OkButton:active {
+    box-shadow: #003400 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.FolderNameInput {
+    width: 300px;
+    height: 30px;
+}
+
+.Modal {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.Modal.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+}
+
+.ModalContent {
+    height: 200px;
+    width: 500px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: large;
+}
+
+.ModalContent > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.ItemIcon {
+    width: 50px;
+    height: 50px;
+}
+
+.ToolIcon {
+    width: 32px;
+    height: 32px;
+}
+
+.AiOutlineDelete {
+    width: 35px;
+    height: 35px;
+}
